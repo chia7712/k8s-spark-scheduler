@@ -1,0 +1,29 @@
+go mod operation failed. This may mean that there are legitimate dependency issues with the "go.mod" definition in the repository and the updates performed by the gomod check. This branch can be cloned locally to debug the issue.
+
+Command that caused error:
+./godelw check compiles
+
+Output:
+Running compiles...
+internal/cache/demands.go:104:51: cannot use obj.(*demandapi.Demand) (value of type *"github.com/palantir/k8s-spark-scheduler-lib/pkg/apis/scaler/v1alpha1".Demand) as context.Context value in argument to client.Demands(obj.GetNamespace()).Create: missing method Deadline
+internal/cache/demands.go:104:74: too few arguments in call to client.Demands(obj.GetNamespace()).Create
+internal/cache/demands.go:108:51: cannot use obj.(*demandapi.Demand) (value of type *"github.com/palantir/k8s-spark-scheduler-lib/pkg/apis/scaler/v1alpha1".Demand) as context.Context value in argument to client.Demands(obj.GetNamespace()).Update: missing method Deadline
+internal/cache/demands.go:108:74: too few arguments in call to client.Demands(obj.GetNamespace()).Update
+internal/cache/demands.go:112:42: cannot use name (variable of type string) as context.Context value in argument to client.Demands(namespace).Delete: missing method Deadline
+internal/cache/demands.go:112:48: cannot use nil (untyped nil value) as string value in argument to client.Demands(namespace).Delete
+internal/cache/demands.go:112:51: too few arguments in call to client.Demands(namespace).Delete
+internal/cache/demands.go:116:39: cannot use name (variable of type string) as context.Context value in argument to client.Demands(namespace).Get: missing method Deadline
+internal/cache/demands.go:116:45: cannot use (metav1.GetOptions literal) (value of type "k8s.io/apimachinery/pkg/apis/meta/v1".GetOptions) as string value in argument to client.Demands(namespace).Get
+internal/cache/demands.go:116:64: too few arguments in call to client.Demands(namespace).Get
+internal/cache/resourcereservations.go:125:64: cannot use obj.(*v1beta1.ResourceReservation) (value of type *"github.com/palantir/k8s-spark-scheduler-lib/pkg/apis/sparkscheduler/v1beta1".ResourceReservation) as context.Context value in argument to client.ResourceReservations(obj.GetNamespace()).Create: missing method Deadline
+internal/cache/resourcereservations.go:125:98: too few arguments in call to client.ResourceReservations(obj.GetNamespace()).Create
+internal/cache/resourcereservations.go:129:64: cannot use obj.(*v1beta1.ResourceReservation) (value of type *"github.com/palantir/k8s-spark-scheduler-lib/pkg/apis/sparkscheduler/v1beta1".ResourceReservation) as context.Context value in argument to client.ResourceReservations(obj.GetNamespace()).Update: missing method Deadline
+internal/cache/resourcereservations.go:129:98: too few arguments in call to client.ResourceReservations(obj.GetNamespace()).Update
+internal/cache/resourcereservations.go:133:55: cannot use name (variable of type string) as context.Context value in argument to client.ResourceReservations(namespace).Delete: missing method Deadline
+internal/cache/resourcereservations.go:133:61: cannot use nil (untyped nil value) as string value in argument to client.ResourceReservations(namespace).Delete
+internal/cache/resourcereservations.go:133:64: too few arguments in call to client.ResourceReservations(namespace).Delete
+internal/cache/resourcereservations.go:137:52: cannot use name (variable of type string) as context.Context value in argument to client.ResourceReservations(namespace).Get: missing method Deadline
+internal/cache/resourcereservations.go:137:58: cannot use (metav1.GetOptions literal) (value of type "k8s.io/apimachinery/pkg/apis/meta/v1".GetOptions) as string value in argument to client.ResourceReservations(namespace).Get
+internal/cache/resourcereservations.go:137:77: too few arguments in call to client.ResourceReservations(namespace).Get
+Finished compiles
+Check(s) produced output: [compiles]
